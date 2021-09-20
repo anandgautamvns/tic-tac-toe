@@ -7,11 +7,12 @@
         "web": "expo start --web",
         "eject": "expo eject",
         "typecheck": "tsc",
-        "lint": "lint-staged"
+        "lint": "lint-staged",
+        "ts-compile-checker": "tsc -p tsconfig.json --noEmit"
     },
     "husky": {
         "hooks": {
-            "pre-push": "npm run typecheck && npm run lint",
+            "pre-push": "npm run ts-compile-checker && npm run lint",
             "pre-commit": "npm run lint"
         }
     },
@@ -27,7 +28,8 @@
         "react": "16.13.1",
         "react-dom": "16.13.1",
         "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
-        "react-native-web": "~0.13.12"
+        "react-native-web": "~0.13.12",
+        "ts-compile-checker": "^1.0.19"
     },
     "devDependencies": {
         "@babel/core": "^7.9.0",
